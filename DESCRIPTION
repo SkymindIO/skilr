@@ -1,0 +1,15 @@
+Package: skilr
+Title: Train, deploy and manage your R models with SKIL
+Version: 0.0.1
+Authors@R: 
+    person(given = "Max",
+           family = "Pumperla",
+           role = c("aut", "cre"),
+           email = "max.pumperla@googlemail.com",
+           comment = structure("https://orcid.org/0000-0002-7801-4184", .Names = "Max Pumperla"))
+Description: Train, deploy and manage your R models with SKIL
+License: Apache
+Depends: R (>= 3.1.0), httr, tensorflow, reticulate
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1.9000
