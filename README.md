@@ -60,3 +60,9 @@ detection <- service$detect_objects(image)
 image <- skil.utils.yolo.annotate_image(image, detection)
 cv$imwrite('annotated.jpg', image)
 ```
+
+Next, have a look at the SKIL UI at [http://localhost:9008](http://localhost:9008) to see how everything you just did is automatically tracked by SKIL. The UI is mostly self-explanatory and you shouldn't have much trouble navigating it. After logging in (use "admin" as user name and password), you will see that SKIL has created a _workspace_ for you in the "Workspaces" tab. If you click on that workspace, you'll find a so called _experiment_, which contains the yolo model you just loaded into SKIL. Each SKIL experiment comes with a notebook that you can work in. In fact, if you click on "Open notebook" next to the experiment, you will be redirected to a live notebook that contains another interesting example that shows how to deploy Keras and DL4J models (the former in Python, the latter in Scala - all in the same notebook). If you like notebooks and a managed environment that provides you with everything you need out of the box, you can SKIL's notebooks for all your workload. For instance, you could copy and paste the 7 lines of code for the above YOLO app in a SKIL notebook and it will work the same way!
+
+In the "Deployments" tab of the UI, you can see your deployed YOLO service, which consists of just one model, and you'll see that it is "Fully deployed". If you click on the deployment you'll see more details of it, for instance you can explicitly check the endpoints your service is available at. You could, among other things, also re-import the model again through the UI (in case you have a better version or needed to make other changes).
+
+This completes your very first SKIL example.
