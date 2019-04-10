@@ -29,6 +29,7 @@ pip install skil
 ```
 
 Next, you can install and load the R client from GitHub like this:
+
 ```R
 devtools::install_github("SkymindIO/skilr")
 library("skilr")
@@ -48,4 +49,14 @@ deployment <- Deployment()
 service <- model$deploy(deployment, input_names=c('input'), output_names=c('output'))
 ```
 
-TODO: use `devtools::install_github("swarm-lab/ROpenCVLite")` for detection or wrap opencv from Python
+Your YOLO object detection app is now live! You can send images to it using the `detect_objects` method of your `service`. We use [OpenCV](https://opencv.org/), imported as `cv` (through Python's `cv2` library, using `reticulate` for interfacing with R), to load, annotate and write images. The full example (including model and images) is [located here](TODO) for your convenience.
+
+```R
+library(reticulate)
+
+cv <- import("cv2")
+image <- cv$imread("say_yolo_again.jpg")
+detection <- service$detect_objects(image)
+image <- skil.utils.yolo.annotate_image(image, detection)
+cv$imwrite('annotated.jpg', image)
+```
