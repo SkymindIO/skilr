@@ -65,4 +65,4 @@ Next, have a look at the SKIL UI at [http://localhost:9008](http://localhost:900
 
 In the "Deployments" tab of the UI, you can see your deployed YOLO service, which consists of just one model, and you'll see that it is "Fully deployed". If you click on the deployment you'll see more details of it, for instance you can explicitly check the endpoints your service is available at. You could, among other things, also re-import the model again through the UI (in case you have a better version or needed to make other changes).
 
-This completes your very first SKIL example.
+This completes your very first SKIL example. 
