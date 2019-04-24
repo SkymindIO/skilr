@@ -142,3 +142,24 @@ InferenceJob <- function(inference_config, job_id=NULL, create=TRUE)) {
       job_id=job_id,
       create=create)
 }
+
+#' Get all current SKIL jobs
+#'
+#' @export
+get_all_jobs <- function(skil) {
+    skilr$get_all_jobs(skil)
+}
+
+#' Get SKIL job by id
+#'
+#' @export
+get_job_by_id <- function(skil, job_id) {
+    skilr$get_job_by_id(skil, job_id)
+}
+
+#' Delete Job by ID
+#' 
+#' @export
+delete_job_by_id <- function(skil, job_id) {
+    skilr$delete_job_by_id(job_id)
+}
