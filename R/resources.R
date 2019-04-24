@@ -227,3 +227,47 @@ S3 <- function(skil, name, bucket, region, credential_uri, resource_id=NULL, cre
         create=create)
 }
 
+
+#' Get all current SKIL resources as a list of Resource instances.
+#' 
+#' @export
+get_all_resources <- function(skil) {
+    skilr$get_all_resources(skil=skil)
+}
+
+#' Get a SKIL Resource by ID.
+#' 
+#' @export
+get_resource_by_id <- function(skil, resource_id) {
+    skilr$get_resource_by_id(skil=skil, resource_id=resource_id)
+}
+
+#' Get a list of SKIL Resource objects by type ('compute' or 'storage').
+#' 
+#' @export
+get_resources_by_type <- function(skil, resource_type) {
+    skilr$get_resources_by_type(skil=skil, resource_type=resource_type)
+}
+
+#' Get a list of resources by string sub_type, namely
+#'
+#'      - EMR                   # AWS Elastic Map Reduce(Compute)
+#'      - S3                    # AWS Simple Storage Service
+#'      - GoogleStorage         # Google Cloud Storage
+#'      - DataProc              # Google Big Data Compute Engine
+#'      - HDInsight             # Azure Compute
+#'      - AzureStorage          # Azure Blob Storage
+#'      - HDFS                  # in house Hadoop (Storage)
+#' @export
+get_resources_by_sub_type <- function(skil, sub_type) {
+    skilr$get_resources_by_sub_type(skil=skil, sub_type=sub_type)
+}
+
+#' Get a concrete SKIL Resource implementation by resource ID. 
+#' For instance, if your resource ID corresponds to a resource of subtype "HDFS",
+#' this will return a SKIL HDFS object.
+#' 
+#' @export
+get_resource_details_by_id <- function(skil, resource_id) {
+    skilr$get_resource_details_by_id(skil=skil, resource_id=resource_id)
+}
